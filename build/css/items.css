@@ -1,0 +1,10 @@
+@import url(background.css);
+
+#favicon {
+    width: 40px; 
+    margin-right: 10px;
+}
+
+.upper-color {
+    background-color: #000000;
+}
