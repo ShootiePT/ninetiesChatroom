@@ -1,4 +1,4 @@
-// script.js
+
 
 // Timer
 let timerElement = document.getElementById('timer');
@@ -42,12 +42,16 @@ function populateUserList() {
     });
 }
 
-// Populate Chat Messages (Dummy Data)
-let chatMessages = document.getElementById('chatMessages');
-let messages = [
+let userList = [
     { user: 'User 1', message: 'Hello everyone!' },
     { user: 'User 2', message: 'Hi there!' },
     { user: 'User 3', message: 'Good to see you all.' }
+];
+
+// Populate Chat Messages (Dummy Data)
+let chatMessages = document.getElementById('chatMessages');
+let messages = [
+   
 ];
 
 messages.forEach(message => {
@@ -56,10 +60,10 @@ messages.forEach(message => {
     chatMessages.appendChild(messageDiv);
 });
 
-function populateChatMessages() {
-    const chatMessagesContainer = document.querySelector('.chat-messages');
+ function populateChatMessages() {
+    const chatMessagesContainer = document.querySelector('#chatMessages');
     chatMessagesContainer.innerHTML = '';
-    chatMessages.forEach(chat => {
+    messages.forEach(chat => {
         const chatMessageElement = document.createElement('div');
         chatMessageElement.classList.add('flex', 'items-center', 'mb-2');
         const userAvatar = document.createElement('img');
@@ -77,7 +81,7 @@ function populateChatMessages() {
         chatMessageElement.appendChild(messageText);
         chatMessagesContainer.appendChild(chatMessageElement);
     });
-}
+} 
 
 // Call functions to populate user list and chat messages
 populateUserList();
@@ -87,17 +91,28 @@ populateChatMessages();
 let messageInput = document.getElementById('messageInput');
 let sendMessageButton = document.getElementById('sendMessage');
 
+let chatMessagesContainer = document.getElementById('chatMessages');
+
 sendMessageButton.addEventListener('click', function() {
-    let message = messageInput.value.trim();
+    let message = { user: 'User 1', message: messageInput.value }
     if (message !== '') {
         // Add message to chat
-        let messageDiv = document.createElement('div');
-        messageDiv.textContent = `You: ${message}`;
-        chatMessages.appendChild(messageDiv);
+        messages.push(message);
+        console.log(messages);
+        populateChatMessages();
         // Clear input field
         messageInput.value = '';
     }
 });
+
+function appendMessage(user, message) {
+    let messageDiv = document.createElement('div');
+    messageDiv.textContent = `${user}: ${message}`;
+    console.log("something");
+    chatMessagesContainer.appendChild(messageDiv);
+    // Automatically scroll to the bottom of the chat messages container
+    chatMessagesContainer.scrollTop = chatMessagesContainer.scrollHeight;
+}
 
 // Start Timer
 startTimer();
