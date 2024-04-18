@@ -152,7 +152,9 @@ async function getMessages(){
             messageText.classList.add('bg-white', 'rounded-lg', 'p-2', 'shadow', 'mb-2', 'max-w-sm');
             messageText.textContent = chat.text;
 
-            if (chat.userId === 2) { // Replace 'YourUsername' with the username of the current user
+            const sessiontId = await getSessionId();
+
+            if (chat.userId === sessiontId) { // Replace 'YourUsername' with the username of the current user
                 // If the message is from the current user, display it on the left
                 chatMessageElement.appendChild(messageText);
                 chatMessageElement.appendChild(userAvatar);
@@ -175,6 +177,7 @@ async function getMessages(){
 populateUserList();
 populateChatMessages();
 
+
 // Send Message
 let messageInput = document.getElementById('messageInput');
 let sendMessageButton = document.getElementById('sendMessage');
@@ -193,13 +196,27 @@ async function sendMessage(userId, messageText){
     }
 }
 
+async function getSessionId(){
 
-sendMessageButton.addEventListener('click', function() {
+    const sessionId = await fetch('/api/session')
+        .then(response => response.json())
+        .then(data => {return data.userId;})
+        .catch(error => console.error('Error fetching user data:', error));
+
+    return sessionId;
+
+}
+
+
+sendMessageButton.addEventListener('click', async function() {
+    const sessionId = await getSessionId();
+
     if (!timerStarted) {
         startTimer();
         timerStarted = true;
     }
-    let message = { user: 2, message: messageInput.value }
+
+    let message = { user: sessionId, message: messageInput.value }
     if (message !== '') {
         // Add message to chat
         sendMessage(message.user, message.message);

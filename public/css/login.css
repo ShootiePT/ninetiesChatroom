@@ -1,0 +1,48 @@
+/* Custom CSS */
+.logo-container {
+    width: 100%;
+    max-width: 400px; /* Set the maximum width for the logo container */
+    margin: 0 auto; /* Center the container horizontally */
+    text-align: center; /* Center the content inside the container */
+}
+.logo-img {
+    width: 100%; /* Make the logo responsive within its container */
+}
+
+
+
+@keyframes color-float {
+    0% {
+      background-position: 0 0;
+    }
+    25%{
+        background-position: 50% 50%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75%{
+        background-color: 50% 50%;
+    }
+    100% {
+        background-position: 0 0;
+    }
+  }
+  
+  .color-float {
+    background: linear-gradient(to right, #293A48, #576D80, #B29786, #A76F45);
+    background-size: 200% auto;
+    animation: color-float 5s linear infinite;
+  }
+  
+  .flex-container {
+    display: flex;
+    align-items: center;
+    border-radius: 0 0 0.5rem 0.5rem;
+  }
+  
+  .text-content {
+    padding: 1.5rem;
+    color: white;
+  }
+  
