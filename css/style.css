@@ -21,3 +21,51 @@ body {
 .dark #chatMessages {
     color: #000000;
 }
+
+@keyframes color-float {
+    0% {
+      background-position: 0 0;
+    }
+    25%{
+        background-position: 50% 50%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    75%{
+        background-color: 50% 50%;
+    }
+    100% {
+        background-position: 0 0;
+    }
+  }
+
+.color-float {
+    background: linear-gradient(to right, #293A48, #576D80, #B29786, #A76F45);
+    background-size: 200% auto;
+    animation: color-float 5s linear infinite;
+  }
+  
+  .flex-container {
+    display: flex;
+    align-items:center;
+    
+    justify-content: center;
+  }
+
+
+  .bg-azul{
+    background-color: #8ebbff22 
+  }
+
+  .timer-bg {
+    background-color: rgba(138, 133, 133, 0.1) !important;
+  }
+
+  .h-720 {
+    height: 790px !important;
+  }
+
+  #chatMessages {
+    height: 720px;
+  }
