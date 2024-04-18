@@ -1029,11 +1029,6 @@ video {
   content: var(--tw-content);
 }
 
-.before\:content-\[\'\\201C\'\]::before {
-  --tw-content: '\201C';
-  content: var(--tw-content);
-}
-
 .after\:absolute::after {
   content: var(--tw-content);
   position: absolute;
@@ -1138,10 +1133,6 @@ video {
   content: var(--tw-content);
 }
 
-.after\:content-\[\'\\201D\'\]::after {
-  --tw-content: '\201D';
-  content: var(--tw-content);
-}
 
 .hover\:bg-teal-600:hover {
   --tw-bg-opacity: 1;

@@ -6,11 +6,15 @@
 }
 
 .upper-color {
-    background-color: #000000;
+    background-color: #24293e;
+}
+
+.inner-color {
+    color: #435290 !important;
 }
 
 .sh-box {
-    box-shadow: 0 0 15px #00adfd;
+    box-shadow: 0 0 15px #00adfd !important;
 }
 
 .features {
@@ -20,6 +24,10 @@
     left: 50%; 
     right: 50%; 
     transform: translateX(-50%); 
+}
+
+.bg-35 {
+    background-color: #142a3380;
 }
   
   
