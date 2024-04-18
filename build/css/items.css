@@ -29,5 +29,9 @@
 .bg-35 {
     background-color: #142a3380;
 }
+
+#flex-bet {
+    justify-content: space-between !important;
+}
   
   
