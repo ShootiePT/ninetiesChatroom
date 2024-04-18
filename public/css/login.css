@@ -1,15 +1,13 @@
 /* Custom CSS */
 .logo-container {
     width: 100%;
-    max-width: 400px; /* Set the maximum width for the logo container */
+    max-width: 500px; /* Set the maximum width for the logo container */
     margin: 0 auto; /* Center the container horizontally */
     text-align: center; /* Center the content inside the container */
 }
 .logo-img {
     width: 100%; /* Make the logo responsive within its container */
 }
-
-
 
 @keyframes color-float {
     0% {
@@ -37,12 +35,52 @@
   
   .flex-container {
     display: flex;
-    align-items: center;
-    border-radius: 0 0 0.5rem 0.5rem;
+    align-items:center;
+    border-radius:  0.5rem 0.5rem 0.5rem 0.5rem;
+    justify-content: center;
   }
   
   .text-content {
-    padding: 1.5rem;
+    padding: 1rem;
     color: white;
   }
+
+  .register-button {
+    display: inline-block;
+    border-radius: 0.25rem; /* Rounded corners */
+    border-width: 2px;
+    border-color: #576D80; /* Border color */
+    padding: 6px 12px; /* Vertical and horizontal padding */
+    font-size: 0.75rem; /* Font size */
+    font-weight: 500; /* Font weight */
+    text-transform: uppercase; /* Uppercase text */
+    line-height: 1.25; /* Normal line height */
+    color: #576D80; /* Text color */
+    transition: all 0.15s ease-in-out; /* Transition */
+  }
+  
+  .register-button:hover,
+  .register-button:focus {
+    border-color: #A76F45; /* Border color on hover or focus */
+    background-color: #B29786; /* Background color on hover or focus */
+    color: #A76F45; /* Text color on hover or focus */
+    outline: none; /* Remove outline on focus */
+  }
+  
+  .register-button:active {
+    border-color: #293A48; /* Border color on active state */
+    color: #293A48; /* Text color on active state */
+  }
+  
+  .dark .register-button:hover,
+  .dark .register-button:focus {
+    background-color: #7b2121; /* Dark mode background color on hover or focus */
+  }
+  
+  .dark .register-button:active {
+    background-color: #6f1d1d; /* Dark mode background color on active state */
+  }
+
+  
+  
   

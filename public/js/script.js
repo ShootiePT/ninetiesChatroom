@@ -1,26 +1,71 @@
+
 async function init(){
-// Timer
-let timerElement = document.getElementById('timer');
-let totalTimeInSeconds = 15 * 60; // Start at 15 minutes
-let timerInterval;
-let timerStarted = false;
 
-function startTimer() {
-    timerInterval = setInterval(updateTimer, 1000);
-}
 
-function updateTimer() {
-    if (totalTimeInSeconds > 0) {
-        totalTimeInSeconds--;
-        let minutes = Math.floor(totalTimeInSeconds / 60);
-        let seconds = totalTimeInSeconds % 60;
-        timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    } else {
-        clearInterval(timerInterval);
-        // Timer has reached 0, you can add any necessary actions here
+document.addEventListener('DOMContentLoaded', async function(){
+
+    const response = await fetch('/rooms/1/participants', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({userId: await getSessionId()})
+    });
+
+});
+
+let dest = new Date();
+dest.setMinutes(dest.getMinutes() + 15);
+dest = dest.getTime();
+
+let x = setInterval(function () {
+    let now = new Date().getTime();
+    let diff = dest - now;
+    
+    // Check if the countdown has reached zero or negative
+    if (diff <= 0) {
+        clearInterval(x); // Stop the countdown
+        // You can also update the display to show zeros or a finished state
+        document.querySelectorAll('.countdown-element').forEach(el => el.innerHTML = '00');
+        return; // Exit the function
     }
-}
 
+    let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+
+  hours = hours < 10 ? `0${hours}` : hours;
+  minutes = minutes < 10 ? `0${minutes}` : minutes;
+  seconds = seconds < 10 ? `0${seconds}` : seconds;
+
+    // Get elements by class name
+    let countdownElements = document.getElementsByClassName("countdown-element");
+  for (let i = 0; i < countdownElements.length; i++) {
+    let className = countdownElements[i].classList[1]; // Get the second class name
+    switch (className) {
+      case "hours":
+        countdownElements[i].innerHTML = hours;
+        break;
+      case "minutes":
+        countdownElements[i].innerHTML = minutes;
+        break;
+      case "seconds":
+        countdownElements[i].innerHTML = seconds;
+        break;
+      default:
+        break;
+    }
+  }
+}, 1000);
+
+
+let topic = document.getElementById('topic');
+let response = await fetch('debates/' + Math.ceil(Math.random()*4), {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' }});
+
+let data = await response.json();
+
+topic.textContent = await data.topic;
 
 
 // Dark/Light Mode Toggle
