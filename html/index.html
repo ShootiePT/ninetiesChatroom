@@ -136,7 +136,7 @@
     <!-- Timer and Dark/Light Mode Button -->
     <div class="container mx-auto flex justify-between items-center py-4">
         <div class="flex items-center">
-            <div id="timer" class="text-xl font-bold mr-4 ml-6">00:00</div>
+            <div id="timer" class="text-xl font-bold mr-4 ml-6">15:00</div>
         </div>
         <div>
             <button id="modeToggle" class="bg-gray-300 text-gray-800 px-4 py-2 mr-6 rounded">
@@ -146,14 +146,14 @@
     </div>
     <!-- Chatroom -->
     <div class="container mx-auto px-4 flex">
-        <div class="h-screen flex flex-col w-3/4 pr-4">
+        <div class="h-screen flex flex-col w-4/5 pr-4">
             <div id="chatMessages" class="flex-1 bg-gray-200 overflow-y-scroll">
                 <div class="px-4 py-2">
                     <div class="flex items-center mb-2">
                         <img class="w-8 h-8 rounded-full mr-2" src="https://picsum.photos/50/50" alt="User Avatar">
                         <div class="font-medium">John Doe</div>
                     </div>
-                    <div class="bg-white rounded-lg p-2 shadow mb-2 max-w-sm">
+                    <div class="bg-gray-700 rounded-lg p-2 shadow mb-2 max-w-sm">
                         Fuck this shit
                     </div>
                     <div class="flex items-center justify-end">
@@ -181,7 +181,7 @@
 
         </div>
         <!-- user list -->
-        <div class="w-1/4 border user-list rounded bg-purple-200 flex flex-col ring-offset-2 ring-pink-900 ring-2">
+        <div class="border user-list rounded bg-purple-200 flex flex-col ring-offset-2 ring-pink-900 ring-2 w-1/5 mb-3 items-center">
             <div class="w-96 text-surface dark:text-white">
                 <a href="#!" aria-current="true"
                     class="block w-full cursor-pointer rounded-lg bg-primary-100 p-4 text-primary-700 dark:bg-slate-900 dark:text-primary-500">
@@ -221,6 +221,11 @@
             </div>
         </div>
     </div>
+    <footer class="bg-gray-800 text-white text-center py-4">
+        <div class="container mx-auto">
+            <p>&copy; 2024 Your Company. All rights reserved.</p>
+        </div>
+    </footer>
     <script src="/js/script.js"></script> <!-- Your JavaScript file -->
 </body>
 

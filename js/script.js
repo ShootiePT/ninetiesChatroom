@@ -1,20 +1,27 @@
 
-
 // Timer
 let timerElement = document.getElementById('timer');
-let totalTimeInSeconds = 0;
+let totalTimeInSeconds = 15 * 60; // Start at 15 minutes
 let timerInterval;
+let timerStarted = false;
 
 function startTimer() {
     timerInterval = setInterval(updateTimer, 1000);
 }
 
 function updateTimer() {
-    let minutes = Math.floor(totalTimeInSeconds / 60);
-    let seconds = totalTimeInSeconds % 60;
-    timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-    totalTimeInSeconds++;
+    if (totalTimeInSeconds > 0) {
+        totalTimeInSeconds--;
+        let minutes = Math.floor(totalTimeInSeconds / 60);
+        let seconds = totalTimeInSeconds % 60;
+        timerElement.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    } else {
+        clearInterval(timerInterval);
+        // Timer has reached 0, you can add any necessary actions here
+    }
 }
+
+
 
 // Dark/Light Mode Toggle
 let modeToggle = document.getElementById('modeToggle');
@@ -60,7 +67,7 @@ messages.forEach(message => {
     chatMessages.appendChild(messageDiv);
 });
 
- function populateChatMessages() {
+ /*function populateChatMessages() {
     const chatMessagesContainer = document.querySelector('#chatMessages');
     chatMessagesContainer.innerHTML = '';
     messages.forEach(chat => {
@@ -81,7 +88,46 @@ messages.forEach(message => {
         chatMessageElement.appendChild(messageText);
         chatMessagesContainer.appendChild(chatMessageElement);
     });
-} 
+} */
+
+function populateChatMessages() {
+    const chatMessagesContainer = document.querySelector('#chatMessages');
+    chatMessagesContainer.innerHTML = '';
+
+    messages.forEach(chat => {
+        const chatMessageElement = document.createElement('div');
+        chatMessageElement.classList.add('flex', 'items-center', 'mb-2', 'usermessage');
+
+        const userAvatar = document.createElement('img');
+        userAvatar.classList.add('w-8', 'h-8', 'rounded-full', 'mr-2');
+        userAvatar.src = 'https://picsum.photos/50/50';
+        userAvatar.alt = 'User Avatar';
+
+        const userName = document.createElement('div');
+        userName.classList.add('font-medium');
+        userName.textContent = chat.user;
+
+        const messageText = document.createElement('div');
+        messageText.classList.add('bg-white', 'rounded-lg', 'p-2', 'shadow', 'mb-2', 'max-w-sm');
+        messageText.textContent = chat.message;
+
+        if (chat.user === 'YourUsername') { // Replace 'YourUsername' with the username of the current user
+            // If the message is from the current user, display it on the left
+            chatMessageElement.appendChild(userAvatar);
+            chatMessageElement.appendChild(userName);
+            chatMessageElement.appendChild(messageText);
+        } else {
+            // If the message is from another user, display it on the right
+            chatMessageElement.appendChild(messageText);
+            chatMessageElement.appendChild(userName);
+            chatMessageElement.appendChild(userAvatar);
+            chatMessageElement.style.justifyContent = 'flex-end';
+        }
+
+        chatMessagesContainer.appendChild(chatMessageElement);
+    });
+}
+
 
 // Call functions to populate user list and chat messages
 populateUserList();
@@ -94,6 +140,10 @@ let sendMessageButton = document.getElementById('sendMessage');
 let chatMessagesContainer = document.getElementById('chatMessages');
 
 sendMessageButton.addEventListener('click', function() {
+    if (!timerStarted) {
+        startTimer();
+        timerStarted = true;
+    }
     let message = { user: 'User 1', message: messageInput.value }
     if (message !== '') {
         // Add message to chat
@@ -115,4 +165,4 @@ function appendMessage(user, message) {
 }
 
 // Start Timer
-startTimer();
+//startTimer();

@@ -9,6 +9,15 @@ body {
 
 /* Dark Mode */
 .dark {
-    background-color: #000000;
+    background-color: #232020;
     color: #ffffff;
+    
+}
+
+.dark #messageInput {
+    color: #000000;
+}
+
+.dark #chatMessages {
+    color: #000000;
 }
