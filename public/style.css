@@ -1,24 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    padding: 0;
-    background: #f4f4f4;
+    background-color: #ffffff;
+    color: #000000;
 }
 
-#room-controls, #message-controls {
-    margin-bottom: 20px;
+/* Dark Mode */
+.dark {
+    background-color: #232020;
+    color: #ffffff;
+    
 }
 
-input, button {
-    padding: 10px;
-    margin-right: 5px;
+.dark #messageInput {
+    color: #000000;
 }
 
-#messages {
-    background: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    height: 300px;
-    overflow-y: scroll;
-    width: 300px;
+.dark #chatMessages {
+    color: #000000;
 }

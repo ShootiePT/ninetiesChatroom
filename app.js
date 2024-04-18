@@ -5,6 +5,7 @@ const messageRoutes = require('./routes/messageRoutes');
 const debatesRoutes = require('./routes/debatesRoutes');
 
 const app = express();
+app.use(express.static('public'));
 
 // Middleware to parse JSON bodies
 app.use(express.json());

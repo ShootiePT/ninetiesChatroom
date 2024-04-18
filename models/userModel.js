@@ -13,6 +13,11 @@ class UserModel {
         return result.rows[0]; // Returns undefined if no user is found
     }
 
+    async getUserById(id) {
+        const result = await pool.query('SELECT * FROM users WHERE user_id = $1', [id]);
+        return result.rows[0]; // Returns undefined if no user is found
+    }
+
     async incrementUserScore(userId, topicScore){
         const result = await pool.query('UPDATE users SET score = score + $2 WHERE user_id = $1 RETURNING score', [userId, topicScore]);
         if (result.rowCount > 0) {

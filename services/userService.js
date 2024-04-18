@@ -13,6 +13,11 @@ class UserService {
         return match ? user : false;
     }
 
+    async getUserById(id){
+        const user = await userModel.getUserById(id);
+        return user || false;
+    }
+
     async incrementUserScore(userId, topicScore) {
         return userModel.incrementUserScore(userId, topicScore);
     }

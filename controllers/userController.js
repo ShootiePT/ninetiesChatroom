@@ -23,6 +23,16 @@ exports.login = async (req, res) => {
     }
 };
 
+exports.getUserById = async (req, res) => {
+    try {
+        const { userId } = req.params;
+        const user = await userService.getUserById(userId);
+        res.json(user);
+    } catch (error) {
+        res.status(500).send(error.message);
+    }
+};
+
 exports.incrementScore = async (req, res) => {
     try {
         const user = await userService.incrementUserScore(req.body.userId, req.body.topicScore);

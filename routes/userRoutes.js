@@ -11,4 +11,7 @@ router.post('/login', userController.login);
 // Define the route for user score increment
 router.post('/score', userController.incrementScore);
 
+// Define the route for user score increment
+router.get('/:userId', userController.getUserById);
+
 module.exports = router;
