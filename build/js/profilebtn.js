@@ -1,4 +1,3 @@
-
 const button = document.getElementById('user-menu-button');
 const menu = document.querySelector('#profile-dropdown > div:last-child');
 
