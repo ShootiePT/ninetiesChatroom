@@ -8,8 +8,8 @@
 
     <title>MusicChat</title>
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/items.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/items.css" />
     <link rel="icon" type="image/png" href="/build/img/nir.png">
 
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.0.3/dist/tailwind.min.css" rel="stylesheet">
@@ -52,7 +52,8 @@
                     </div>
                     <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div class="flex flex-shrink-0 items-center">
-                            <img class="h-8 w-auto" src="../build/img/nir.png" alt="MusicChat">
+                            <a href="/build/index.html"><img class="h-8 w-auto" src="../../build/img/nir.png"
+                                    alt="MusicChat"></a>
                         </div>
                         <div class="hidden sm:ml-6 sm:block">
                             <div class="flex space-x-4">
@@ -60,7 +61,7 @@
                                 <a href="#" class="bg-gray-900 text-white rounded-md px-3 py-2 text-sm font-medium"
                                     aria-current="page">Chat Room</a>
                                 <a href="#leaderboard"
-                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Leaderboard</a>
+                                    class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium inner-color">Leaderboard</a>
                                 <a href="#upcoming-f"
                                     class="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Upcoming</a>
                             </div>
@@ -116,160 +117,33 @@
         </nav>
     </header>
 
-    <!-- MAIN -->
-    <main class="mx-auto max-w-4xl">
-        <section id="hero"
-            class="widescreen:section-min-height tallscreen:section-min-height mb-12 flex scroll-mt-40 flex-col-reverse items-center justify-center gap-8 p-6 sm:flex-row">
-            <article class="sm:w-1/2">
-                <h2
-                    class="max-w-md text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-left sm:text-5xl">
-                    The first
-                    <span class="inner-color">real-time discussion platform</span>
-                    about music.
-                </h2>
-                <p class="mt-4 max-w-md text-center text-2xl text-slate-700 dark:text-slate-400 sm:text-left">
-                    A place where you can express and discuss your opinions about your favorite songs.
+
+
+    <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
+
+    <!-- 2ND SECTION -->
+    <section id="leaderboard" class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20">
+        <h2 class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
+            LeaderBoard
+        </h2>
+        <figure class="my-12">
+            <blockquote
+                class="relative rounded-3xl border border-solid border-slate-900 dark:border-gray-100 py-8 pl-14 pr-8 bg-35 sh-box">
+                <div class="flex justify-center items-center w-50 mx-auto">
+                    <img src="/build/img/podium.png" alt="upcoming">
+                </div>
+                <p
+                    class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl text-center">
+                    Elite Debaters - Masters of Discourse.
                 </p>
-            </article>
-            <img class="w-1/2" src="./img/90s.png" alt="90s" />
-        </section>
+                <br>
+                <hr class="mx-auto w-1/2 bg-black dark:bg-white" /><br>
+                <div id="lb-list">
 
-        <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
-
-        <!-- HIGHLIGHTS -->
-        <section class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20">
-            <h2 class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
-                Highlights
-            </h2>
-            <ul class="mx-auto my-12 flex list-none flex-col items-center gap-8 sm:flex-row">
-                <li
-                    class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 py-6 px-2 shadow-xl dark:border-gray-100 sm:w-5/6 sh-box bg-35">
-                    <img src="./img/guitar.png" alt="Explorer" class="mb-6 w-1/2" />
-                    <h3 class="text-center text-3xl text-slate-900 dark:text-white">
-                        chat 1
-                    </h3>
-                    <p class="mt-2 hidden text-center text-3xl text-slate-500 dark:text-slate-400 sm:block">
-                        topic
-                    </p>
-                </li>
-                <li
-                    class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 py-6 px-2 shadow-xl dark:border-gray-100 sm:w-5/6 sh-box bg-35">
-                    <img src="./img/live-music.png" alt="Adventurer" class="mb-6 w-1/2" />
-                    <h3 class="text-center text-3xl text-slate-900 dark:text-white">
-                        chat 2
-                    </h3>
-                    <p class="mt-2 hidden text-center text-3xl text-slate-500 dark:text-slate-400 sm:block">
-                        topic
-                    </p>
-                </li>
-                <li
-                    class="flex w-2/3 flex-col items-center rounded-3xl border border-solid border-slate-900 py-6 px-2 shadow-xl dark:border-gray-100 sm:w-5/6 sh-box bg-35">
-                    <img src="./img/headphones.png" alt="Infinity" class="mb-6 w-1/2" />
-                    <h3 class="text-center text-3xl text-slate-900 dark:text-white">
-                        chat 3
-                    </h3>
-                    <p class="mt-2 hidden text-center text-3xl text-slate-500 dark:text-slate-400 sm:block">
-                        topic
-                    </p>
-                </li>
-            </ul>
-        </section>
-
-        <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
-
-        <!-- 2ND SECTION -->
-        <section id="leaderboard"
-            class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20">
-            <h2 class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
-                LeaderBoard
-            </h2>
-            <figure class="my-12">
-                <blockquote
-                    class="relative rounded-3xl border border-solid border-slate-900 dark:border-gray-100 py-8 pl-14 pr-8 bg-35 sh-box">
-                    <div class="flex justify-center items-center w-50 mx-auto">
-                        <img src="/build/img/podium.png" alt="upcoming">
-                    </div>
-                    <p
-                        class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl text-center">
-                        Show your debating skills and reach the top.
-                    </p>
-                </blockquote>
-            </figure>
-        </section>
-
-
-        <hr class="mx-auto w-1/2 bg-black dark:bg-white" />
-
-        <!-- 3RD SECTION -->
-        <section id="upcoming-f" class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-20">
-            <h2 class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
-                Upcoming Features
-            </h2>
-            <figure class="my-12">
-                <blockquote
-                    class="relative rounded-3xl border border-solid border-slate-900 dark:border-gray-100 py-8 pl-14 pr-8 bg-35 sh-box">
-                    <div id="flex-bet" class="flex">
-                        <div class="flex flex-col w-50">
-                            <img src="/build/img/new-features.png" alt="upcoming">
-                        </div>
-                        <div class="flex flex-col">
-                            <p
-                                class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
-                                ♪ - Leaderboard Perks
-                            </p>
-                            <p
-                                class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
-                                <a href="https://www.moodriser.com/" target="_blank">♪ - <span
-                                        class="stroke">MoodRiser</span>
-                                    Partnership</a>
-                            </p>
-                            <p
-                                class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
-                                ♪ - Spectator Mode
-                            </p>
-                            <p
-                                class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
-                                ♪ - New Discuss Topics
-                            </p>
-                            <p
-                                class="mt-2 text-left text-2xl text-white before:absolute before:top-0 before:left-0 before:translate-x-2 before:translate-y-2 before:transform before:font-serif before:text-9xl before:text-white before:opacity-25 before:content-['\201C'] after:absolute after:-bottom-20 after:right-0 after:-translate-x-2 after:-translate-y-2 after:transform after:font-serif after:text-9xl after:text-white after:opacity-25 after:content-['\201D'] dark:text-slate-400 sm:text-3xl">
-                                ♪ - And more...
-                            </p>
-                        </div>
-                    </div>
-
-                </blockquote>
-                <!--
-        <figcaption class="mt-2 text-right text-xl italic text-slate-500 dark:text-slate-400 sm:text-2xl">
-          &#8212;o maior da tua aldeia
-        </figcaption>
-        -->
-            </figure>
-        </section>
-
-
-
-        <!-- 4ST SECTION 
-    <section id="contact" class="widescreen:section-min-height tallscreen:section-min-height my-12 scroll-mt-16 p-6">
-      <h2 class="mb-6 text-center text-4xl font-bold text-slate-900 dark:text-white sm:text-5xl">
-        Contact Us
-      </h2>
-      <form action="" class="items-left mx-auto flex max-w-4xl flex-col gap-4 text-2xl sm:text-3xl">
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" required minlength="3" maxlength="60" placeholder="Your Subject"
-          class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl" />
-        <label for="message">Message:</label>
-        <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message" required
-          class="w-full rounded-xl border border-solid border-slate-900 p-3 text-2xl text-black dark:border-none sm:text-3xl"></textarea>
-        <button
-          class="w-48 rounded-xl border border-solid border-slate-900 bg-teal-700 p-3 text-white hover:bg-teal-600 active:bg-teal-500 dark:border-none upper-color">
-          Submit
-        </button>
-      </form>
+                </div>
+            </blockquote>
+        </figure>
     </section>
-    -->
-
-    </main>
 
     <!-- FOOTER -->
     <footer id="footer" class="bg-teal-700 text-xl text-white upper-color sh-box mt-20">

@@ -44,3 +44,9 @@
       -1px  1px 0 #fff,
        1px  1px 0 #fff;
 }
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
