@@ -1,4 +1,5 @@
 @import url(background.css);
+@import url(style.css);
 
 #favicon {
     width: 40px; 
@@ -49,4 +50,8 @@
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+.c-white {
+    color: #ffffff !important;
 }
