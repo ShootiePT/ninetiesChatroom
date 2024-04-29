@@ -39,8 +39,9 @@ Information about the project's license.
 
 ## Screenshots
 
-![Screenshot 1](/path/to/screenshot1.png)
-![Screenshot 2](/path/to/screenshot2.png)
+![Screenshot 1](tumb1.PNG)
+![Screenshot 2](tumb3.PNG)
+![Screenshot 2](tumb2.PNG)
 
 ## Credits
 
